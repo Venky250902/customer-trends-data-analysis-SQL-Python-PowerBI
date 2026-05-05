@@ -44,7 +44,7 @@ ORDER BY discount_rate DESC
 LIMIT 5;
 
 
---Q7. Segment customers into New, Returning, and Loyal based on their total 
+--Q8. Segment customers into New, Returning, and Loyal based on their total 
 -- number of previous purchases, and show the count of each segment. 
 with customer_type as (
 SELECT customer_id, previous_purchases,
@@ -59,7 +59,7 @@ select customer_segment,count(*) AS "Number of Customers"
 from customer_type 
 group by customer_segment;
 
---Q8. What are the top 3 most purchased products within each category? 
+--Q7. What are the top 3 most purchased products within each category? 
 WITH item_counts AS (
     SELECT category,
            item_purchased,
